@@ -1,3 +1,5 @@
+# HELPER FUNCTIONS TO EVALUATE THE LIST OF NAMES
+
 import csv
 import numpy
 from decimal import Decimal

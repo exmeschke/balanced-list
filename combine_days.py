@@ -1,4 +1,4 @@
-# COMBINES DATA ACROSS DAYS
+# COMBINES FILES ACROSS DAYS
 
 import csv
 import os
@@ -27,16 +27,16 @@ def is_num(col):
 
 # combine across days
 final_list = [["" for x in range(0,7)] for y in range(0,9450)]
-directory = '.'
+directory = './data'
 for root, dirs, files in os.walk(directory):
 	# only look in current directory
-	if (root is '.'):
+	if (root is './data'):
 		day = 1
 		# loop through these files
 		for fs in files:
 			# only check files that end with .csv and are not already compiled
 			if ('.csv' in fs) and ('googles' in fs):
-				print fs
+				fs = 'data/'+fs
 				# open the file
 				with open(fs, 'rU') as csvin:
 					reader = csv.reader(csvin)
@@ -61,7 +61,7 @@ for root, dirs, files in os.walk(directory):
 						day = day+1
 
 # output to file
-with open('all_.csv', 'wb') as csvout:
+with open('all_data.csv', 'wb') as csvout:
 	writer = csv.writer(csvout)
 	start = 0
 	for f in final_list:

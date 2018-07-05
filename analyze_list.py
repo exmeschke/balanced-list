@@ -1,3 +1,5 @@
+# PRINTS STATS FOR LIST AND TEST LIST
+
 from funcs_evaluate import stats
 from funcs_evaluate import list_stats
 

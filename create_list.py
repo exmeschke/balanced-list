@@ -1,3 +1,5 @@
+# CREATES A BALANCED LIST
+
 from funcs_evaluate import read_googles
 from funcs_evaluate import stats
 from funcs_evaluate import list_stats

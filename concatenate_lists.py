@@ -1,20 +1,19 @@
-# READS IN DATA AND COMBINES INTO ONE FILE
+# READS IN DIRECTORIES AND COMBINES INTO ONE FILE
 
 import csv
 import os
 
 # concatenate lists
 final = [["" for x in range(0,3)] for y in range(0,9500)]
-directory = '.'
+directory = './data'
 # loop through directories
 for dirs in os.walk(directory):
-	if (dirs[0] is '.'):
+	if (dirs[0] is './data'):
 		num_days = len(dirs[1])
 	else:
-		print dirs[0]
-		dirr = dirs[0] 
-		day = dirr[2:]
-		out_file = 'googles_'+str(day)
+		dirr = dirs[0]
+		day = dirr[7:]
+		out_file = 'data/googles_'+str(day)
 
 		# open folder
 		with open(out_file+'.csv', 'wb') as csvout:
